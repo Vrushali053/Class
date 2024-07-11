@@ -1,0 +1,71 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="Asset/CSS/style.css">
+            <title>Validation</title>
+    </head>
+    <body>
+        <script>
+            function data()
+            {
+            var a=document.getElementById("n1").value;
+            var b=document.getElementById("n2").value;
+            var c=document.getElementById("n3").value;
+            var d=document.getElementById("n4").value;
+            var e=document.getElementById("n5").value;
+            var f=document.getElementById("n6").value;
+            var g=document.getElementById("n7").value;
+
+            if(a==""||b==""||c==""||d==""||e==""||f==""||g=="")
+            {
+                alert("All fiels are mendatory");
+                return false;
+            }
+            else if(d.length<10||d.length>10)
+            {
+                alert("Number should of 10 digit! Please enter valid number");
+                return false;
+            }
+            else if(isNaN(d))
+            {
+                alert("Only numbers are allow! Please enter valid number");
+                return false;
+            }
+            else if (!isValidEmail(e)) {
+                alert("Please enter a valid email address.");
+                return false;
+            } 
+            else if(f!=g)
+            {
+                alert("Please enter same password");
+                return false;
+            }
+            else
+            {
+                true;
+            }
+            function isValidEmail(email) {
+            // Basic email validation using a regular expression
+            var pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return pattern.test(email);
+        }
+        }
+        </script>
+        <div class="Main-div">  
+            <div classes="sign-up-form">
+            <h1>Sign Up Now</h1>
+        <form onSubmit="return data()" action="login.html">
+        First name:                 <input type="text" id="n1"><br><br>
+        Middle name:                <input type="text" id="n2"><br><br>
+        Last name:                  <input type="text" id="n3"><br><br>
+        Contact:                   <input number="password" id="n4"><br><br>
+        Email:                      <input type="text" id="n5"><br><br>
+        Passward:                   <input type="password" id="n6"><br><br>
+        Conform password:           <input type="password" id="n7"><br><br>
+        <input type="checkbox">I agree to terms ans services<br><br>
+        <input type="Submit" value="Sign up">
+        </form>
+    </div>
+</div>
+
+    </body>
+</html>
